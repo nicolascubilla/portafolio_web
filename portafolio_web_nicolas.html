@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md p-4 fixed w-full top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Mi Portafolio</h1>
+            <ul class="flex space-x-6">
+                <li><a href="#about" class="hover:text-blue-500 transition">Sobre mí</a></li>
+                <li><a href="#projects" class="hover:text-blue-500 transition">Proyectos</a></li>
+                <li><a href="#contact" class="hover:text-blue-500 transition">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<<<<<<< HEAD
+    <section id="about" class="h-screen flex flex-col justify-center items-center text-center px-6 relative">
+        <img src="fondo_portafolio_cabecera.jpg" alt="Fondo del Portafolio" class="absolute inset-0 w-full h-full object-cover">
+=======
+    <!-- Sección Sobre Mí -->
+    <section id="about" class="h-screen flex flex-col justify-center items-center text-center px-6 relative">
+        <img src="img/fondo_portafolio_cabecera.jpg" alt="Fondo del Portafolio" class="absolute inset-0 w-full h-full object-cover">
+>>>>>>> 95fd57a (subiendo mi pagina web)
+        
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    
+        <div class="relative z-10">
+            <h2 class="text-5xl font-bold text-white">¡Hola! Soy <span class="text-blue-400">Nicolas Cubilla</span></h2>
+<<<<<<< HEAD
+            <p class="text-xl text-gray-300 mt-3">Desarrollador Web especializado en <span class="text-blue-300">[Tecnologías]</span></p>
+=======
+            <p class="text-xl text-gray-300 mt-3">
+                <span id="dynamic-text" class="text-blue-300 border-r-2 border-white pr-2"></span>
+            </p>
+>>>>>>> 95fd57a (subiendo mi pagina web)
+    
+            <a href="#projects" class="mt-6 bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 ease-in-out inline-block">Ver Proyectos</a>
+        </div>
+    </section>
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 95fd57a (subiendo mi pagina web)
+
+    <!-- Proyectos -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold">Proyectos</h2>
+            <p class="text-gray-600 mt-2">Algunos de mis trabajos más recientes</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                <div class="bg-gray-200 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <h3 class="text-xl font-semibold">Proyecto 1</h3>
+                    <p class="text-gray-600">Descripción breve del proyecto.</p>
+                </div>
+                <div class="bg-gray-200 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <h3 class="text-xl font-semibold">Proyecto 2</h3>
+                    <p class="text-gray-600">Descripción breve del proyecto.</p>
+                </div>
+                <div class="bg-gray-200 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <h3 class="text-xl font-semibold">Proyecto 3</h3>
+                    <p class="text-gray-600">Descripción breve del proyecto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold">Contacto</h2>
+            <p class="text-gray-600 mt-2">Envíame un mensaje</p>
+
+            <form class="mt-6 max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
+                <input type="text" placeholder="Nombre" class="w-full p-3 mb-4 border rounded-lg focus:ring-2 focus:ring-blue-400">
+                <input type="email" placeholder="Correo" class="w-full p-3 mb-4 border rounded-lg focus:ring-2 focus:ring-blue-400">
+                <textarea placeholder="Mensaje" class="w-full p-3 mb-4 border rounded-lg focus:ring-2 focus:ring-blue-400"></textarea>
+                <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 ease-in-out w-full">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+<<<<<<< HEAD
+=======
+    <script>
+        const textos = [
+            "Desarrollador Web",
+            "Analista de Sistemas Informáticos",
+            "Especialista en Tecnologías Web"
+        ];
+
+        let textoIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const speed = 100; // Velocidad de escritura
+        const delay = 2000; // Tiempo antes de borrar
+
+        function escribirTexto() {
+            const textElement = document.getElementById('dynamic-text');
+            const currentText = textos[textoIndex];
+
+            if (!isDeleting) {
+                textElement.textContent = currentText.substring(0, charIndex++);
+            } else {
+                textElement.textContent = currentText.substring(0, charIndex--);
+            }
+
+            if (!isDeleting && charIndex > currentText.length) {
+                setTimeout(() => isDeleting = true, delay);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textoIndex = (textoIndex + 1) % textos.length;
+            }
+
+            setTimeout(escribirTexto, isDeleting ? speed / 2 : speed);
+        }
+
+        escribirTexto();
+    </script>
+
+>>>>>>> 95fd57a (subiendo mi pagina web)
+</body>
+</html>
