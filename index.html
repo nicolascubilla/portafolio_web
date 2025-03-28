@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        @keyframes border-glow {
+          0% { border-color: #ff0080; }
+          50% { border-color: #ffbf00; }
+          100% { border-color: #ff0080; }
+        }
+      
+        .border-glow {
+          animation: border-glow 2s infinite alternate;
+        }
+      </style>
+      
 </head>
 <body class="bg-gray-100 text-gray-900">
 
@@ -24,15 +37,31 @@
     <section id="about" class="h-screen flex flex-col justify-center items-center text-center px-6 relative">
         <img src="img/fondo_portafolio_cabecera.jpg" alt="Fondo del Portafolio" class="absolute inset-0 w-full h-full object-cover">
         
+        <!-- Capa oscura para mejorar el contraste -->
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-    
+
+        <!-- Contenido principal -->
         <div class="relative z-10">
-            <h2 class="text-5xl font-bold text-white">¡Hola! Soy <span class="text-blue-400">Nicolas Cubilla</span></h2>
-            <p class="text-xl text-gray-300 mt-3">
+            <!-- Caja de bienvenida con fondo degradado y borde animado -->
+            <div class="px-3 py-2 rounded-lg shadow-xl border-4 border-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 
+                        animate-pulse text-white text-4xl font-bold tracking-wide">
+                ¡Bienvenidos a mi portafolio!
+            </div>
+
+            <!-- Nombre con tamaño más pequeño -->
+            <h2 class="text-3xl font-bold text-white mt-4">
+                ¡Hola! Soy <span class="text-blue-400">Nicolas Cubilla</span>
+            </h2>
+
+            <!-- Texto dinámico -->
+            <p class="text-lg text-gray-300 mt-3">
                 <span id="dynamic-text" class="text-blue-300 border-r-2 border-white pr-2"></span>
             </p>
-    
-            <a href="#projects" class="mt-6 bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 ease-in-out inline-block">Ver Proyectos</a>
+
+            <!-- Botón -->
+            <a href="#projects" class="mt-6 bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 ease-in-out inline-block">
+                Ver Proyectos
+            </a>
         </div>
     </section>
 
@@ -69,23 +98,25 @@
                 <input type="text" placeholder="Nombre" class="w-full p-3 mb-4 border rounded-lg focus:ring-2 focus:ring-blue-400">
                 <input type="email" placeholder="Correo" class="w-full p-3 mb-4 border rounded-lg focus:ring-2 focus:ring-blue-400">
                 <textarea placeholder="Mensaje" class="w-full p-3 mb-4 border rounded-lg focus:ring-2 focus:ring-blue-400"></textarea>
-                <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 ease-in-out w-full">Enviar</button>
+                <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 ease-in-out w-full">
+                    Enviar
+                </button>
             </form>
         </div>
     </section>
 
+    <!-- Script para animación de texto dinámico -->
     <script>
         const textos = [
             "Desarrollador Web",
-            "Analista de Sistemas Informáticos",
-            "Especialista en Tecnologías Web"
+            "Analista de Sistemas Informáticos"
         ];
 
         let textoIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        const speed = 100; // Velocidad de escritura
-        const delay = 2000; // Tiempo antes de borrar
+        const speed = 130; // Velocidad de escritura
+        const delay = 1500; // Tiempo antes de borrar
 
         function escribirTexto() {
             const textElement = document.getElementById('dynamic-text');
