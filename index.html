@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     
     <style>
         @keyframes border-glow {
@@ -12,19 +13,25 @@
           50% { border-color: #ffbf00; }
           100% { border-color: #ff0080; }
         }
-      
         .border-glow {
           animation: border-glow 2s infinite alternate;
         }
-      </style>
-      
+        
+        /* Animación en 3D para tarjetas de habilidades */
+        .skill-card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .skill-card:hover {
+            transform: scale(1.05) rotateY(10deg);
+        }
+    </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
-    <!-- Navbar -->
-    <nav class="bg-white shadow-md p-4 fixed w-full top-0 z-50">
+      <!-- Navbar -->
+      <nav class="bg-white shadow-md p-4 fixed w-full top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold">Mi Portafolio</h1>
-            <ul class="flex space-x-6">
+            <ul class="hidden md:flex space-x-6">
                 <li><a href="#about" class="hover:text-blue-500 transition">Sobre mí</a></li>
                 <li><a href="#projects" class="hover:text-blue-500 transition">Proyectos</a></li>
                 <li><a href="#contact" class="hover:text-blue-500 transition">Contacto</a></li>
@@ -34,7 +41,6 @@
     <!-- Sección Sobre Mí -->
     <section id="about" class="h-screen flex flex-col justify-center items-center text-center px-6 relative">
         <img src="img/fondo_portafolio_cabecera.jpg" alt="Fondo del Portafolio" class="absolute inset-0 w-full h-full object-cover">
-        
         <!-- Capa oscura para mejorar el contraste -->
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
@@ -71,14 +77,14 @@
 </p>
         </div>
     </section>
+    
      <!-- Sección de Habilidades -->
-     <section id="skills" class="py-16 bg-gray-900 text-white">
+     <section id="skills" class="py-11 bg-gray-900 text-white">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold mb-6">Habilidades</h2>
             <p class="text-gray-400 mb-10">Mis principales áreas de experiencia</p>
-
             <!-- Contenedor de habilidades con tarjetas animadas -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
                 <!-- Habilidad 1 -->
                 <div class="skill-card bg-gray-800 p-6 rounded-lg shadow-lg text-center transform transition-all duration-300 hover:scale-105">
                     <h3 class="text-xl font-semibold">Base de Datos</h3>
@@ -87,7 +93,6 @@
                         <div class="bg-blue-500 h-4 rounded-full bar" style="width: 60%;"></div>
                     </div>
                 </div>
-
                 <!-- Habilidad 2 -->
                 <div class="skill-card bg-gray-800 p-6 rounded-lg shadow-lg text-center transform transition-all duration-300 hover:scale-105">
                     <h3 class="text-xl font-semibold">Desarrollador</h3>
@@ -96,7 +101,6 @@
                         <div class="bg-green-500 h-4 rounded-full bar" style="width: 50%;"></div>
                     </div>
                 </div>
-
                 <!-- Habilidad 3 -->
                 <div class="skill-card bg-gray-800 p-6 rounded-lg shadow-lg text-center transform transition-all duration-300 hover:scale-105">
                     <h3 class="text-xl font-semibold">Soporte</h3>
@@ -108,8 +112,6 @@
             </div>
         </div>
     </section>
-
-
     <!-- Proyectos -->
     <section id="projects" class="py-16 bg-white">
         <div class="container mx-auto text-center">
@@ -132,7 +134,6 @@
             </div>
         </div>
     </section>
-
     <!-- Contacto -->
     <section id="contact" class="py-16 bg-gray-100">
         <div class="container mx-auto text-center">
@@ -149,7 +150,7 @@
             </form>
         </div>
     </section>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.2.7/tailwind.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
 
@@ -157,10 +158,10 @@
     <script>
          // Agrega efecto de inclinación 3D a las tarjetas de habilidades
          VanillaTilt.init(document.querySelectorAll(".skill-card"), {
-            max: 10,
-            speed: 400,
+            max: 15,
+            speed: 500,
             glare: true,
-            "max-glare": 0.2
+            "max-glare": 0.3
         });
         </script>
         <script>
